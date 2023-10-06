@@ -1,0 +1,24 @@
+.headimg
+{
+    display: flex;
+    justify-content: center;
+    max-width: fit-content;
+    height: 280px;
+    
+}
+
+.header
+{
+    display: flex;
+    justify-content: center;
+    margin: -15px;
+}
+
+.bodytext
+{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    max-width: 400px;
+}
