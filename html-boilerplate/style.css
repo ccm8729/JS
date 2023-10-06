@@ -1,6 +1,10 @@
 .body 
 {
     display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    background-color: aquamarine;
+    
 
 }
 .headimg
@@ -9,9 +13,18 @@
     justify-content: center;
     max-width: fit-content;
     height: 280px;
+    font-family: sans-serif;
     
 }
-
+h1
+{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 100px;
+    background-color: tan;
+    margin-top: 0;
+}
 .header
 {
     
@@ -20,9 +33,14 @@
 
 .bodytext
 {
-    justify-content: center;
-    max-width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: blueviolet;
+    
+    max-width: 600px;
+    max-height: 1000px;
 }
+
 
 .professional
 {
@@ -35,3 +53,22 @@
     
     max-width: 400px;
 }
+
+.links
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    font-size: 30px;
+    font-family: sans-serif;
+    color: #1428BA;
+    margin: 20px;
+    margin-right: 50px;
+    background-color: black;
+    max-width: 150px;
+}
+
+
+
