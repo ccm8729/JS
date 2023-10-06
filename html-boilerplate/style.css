@@ -1,3 +1,8 @@
+.body 
+{
+    display: flex;
+
+}
 .headimg
 {
     display: flex;
@@ -9,16 +14,24 @@
 
 .header
 {
-    display: flex;
-    justify-content: center;
+    
     margin: -15px;
 }
 
 .bodytext
 {
-    display: flex;
     justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
+    max-width: 400px;
+}
+
+.professional
+{
+    max-width: 400px;
+    
+}
+
+.personal 
+{
+    
     max-width: 400px;
 }
