@@ -5,14 +5,13 @@ let player
 function getComputerChoice() 
 {
     computer = Math.floor(Math.random()*3);
-    console.log(computer);    
+      
 }
 
 function getPlayerChoice()
 {
     player = prompt("Choose rock, paper, or scissors");
     player.toLowerCase();
-    console.log(player);
 }
 
 function compare()
@@ -20,29 +19,48 @@ function compare()
     switch(computer)
     {
         case 0:
-            if(player = 'rock')
+            if(player === 'rock')
             {
                 console.log('rock vs rock');
             }
-            else if (player = 'scissors')
+            else if (player === 'scissors')
             {
-                console.log('rock vs scissors');
-
+               console.log('rock vs scissors');
             }
-            else if (player = 'paper')
+            else if (player === 'paper')
             {
                 console.log('rock vs. paper');
             }
-            console.log(computer);
-            console.log(player);
+            
         break;
         case 1:
-            console.log(computer);
-            console.log(player);
+            if(player === 'rock')
+            {
+                console.log('scissor vs rock');
+            }
+            else if(player === 'scissor')
+            {
+                console.log('scissor vs scissor');
+            }
+            else if(player === 'paper')
+            {
+                console.log('scissor vs paper');
+            }
         break;
         case 2:
-            console.log(computer);
-            console.log(player);
+            if (player === 'rock')
+            {
+                console.log('paper vs rock');
+            }
+            
+            else if(player === 'scissor')
+            {
+                console.log('paper vs scissor');
+            }
+            else if (player === 'paper')
+            {
+                console.log('paper vs paper');
+            }
         break;
 
     }
@@ -51,6 +69,8 @@ function compare()
 
 getComputerChoice();
 getPlayerChoice();
+console.log("computer: ", computer);
+console.log("player: ", player);
 compare();
 
 
