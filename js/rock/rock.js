@@ -3,6 +3,7 @@ let player
 let pwin = 0
 let cwin = 0 
 let tie  = 0
+
 const container = document.querySelector('#container');
 /*for computer - 0 = rock; 1=scissor; 2=paper*/
 
@@ -12,14 +13,15 @@ function getComputerChoice()
       
 }
 
-function getPlayerChoice()
+/*function getPlayerChoice()
 {
     player = prompt("Choose rock, paper, or scissors");
     player = player.toLowerCase();
-}
+}*/
 
 function compare()
 {
+    
     switch(computer)
     {
         case 0:
@@ -93,13 +95,15 @@ function compare()
     return pwin;
     return cwin;
     return tie;
-             
+    
 }
 
 function game ()
 {
+    for (i = 0; i < 4; i++)
+    {
         getComputerChoice();
-        getPlayerChoice();
+       // getPlayerChoice();
         compare();
         
     if(pwin > cwin)
@@ -114,6 +118,7 @@ function game ()
     {
         console.log("Tie!  Ties: " + tie + " Player wins: " + pwin + " computer wins: " + cwin); 
     }
+    }
 }
 
 
@@ -121,6 +126,7 @@ const rock = document.createElement('button');
 rock.classList.add('rock');
 rock.textContent = 'Rock'; 
 rock.setAttribute('style', 'border: 1px solid', 'border-radius: 8px', 'background-color: #fff', 'margin: 15px', 'padding: 15px');
+//rock.setAttribute("onClick", "alert('rock'");
 container.appendChild(rock);
 
 
@@ -138,12 +144,21 @@ container.appendChild(sci);
 
 const buttons = document.querySelectorAll('button');
 
+const results = document.createElement('div');
+results.classList.add('results');
+results.textContent = 'your results so far are:';
+results.setAttribute('style', 'border: 3px solid');
+container.appendChild(results);
+
 buttons.forEach((button) => 
+{
 
 button.addEventListener('click', () =>
-{
+{ 
     game();
-}));
+})});
+
+
 
 
 
