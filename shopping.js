@@ -1,24 +1,24 @@
-const list = documentQuerySelector('ul');
-const input = documentQuerySelector('input');
-const but = documentQuerySelector('button');
+const list = document.querySelector('ul');
+const input = document.querySelector('input');
+const button = document.querySelector('button');
 
+button.addEventListener('click', () => {
+  const myItem = input.value;
+  input.value = '';
 
-button.addEventListener('click', () =>{
-    const myItem = input.value;
-    input = '';
+  const listItem = document.createElement('li');
+  const listText = document.createElement('span');
+  const listBtn = document.createElement('button');
 
-    const myList = document.createElement('li');
-    const myText = document.createElement('span');
-    const myBtn = document.createElement('button');
+  listItem.appendChild(listText);
+  listText.textContent = myItem;
+  listItem.appendChild(listBtn);
+  listBtn.textContent = 'Delete';
+  list.appendChild(listItem);
 
-    myList.appendChild(myText);
-    myList.appendChild(myBtn);
-    myText.textContent(myItem);
-    myBtn.textContent("Delete");
-    myList.appendChild(myItem);
-    
+  listBtn.addEventListener('click', () => {
+    list.removeChild(listItem);
+  });
 
-})
-
-
-addEventListener("click", press());
+  input.focus();
+});
