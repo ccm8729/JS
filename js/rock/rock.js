@@ -3,6 +3,7 @@ let player
 let pwin = 0
 let cwin = 0 
 let tie  = 0
+const container = document.querySelector('#container');
 /*for computer - 0 = rock; 1=scissor; 2=paper*/
 
 function getComputerChoice() 
@@ -97,13 +98,10 @@ function compare()
 
 function game ()
 {
-    for (let i = 0; i < 5; i++)
-    {
         getComputerChoice();
         getPlayerChoice();
         compare();
         
-    }
     if(pwin > cwin)
     {
         console.log("Player wins!  Player score: " + pwin + " Computer score: " + cwin + " tie: " + tie); 
@@ -119,7 +117,37 @@ function game ()
 }
 
 
-getComputerChoice();
+const rock = document.createElement('button');
+rock.classList.add('rock');
+rock.textContent = 'Rock'; 
+rock.setAttribute('style', 'border: 1px solid', 'border-radius: 8px', 'background-color: #fff', 'margin: 15px', 'padding: 15px');
+container.appendChild(rock);
+
+
+const paper = document.createElement('button');
+paper.classList.add('paper');
+paper.textContent = 'Paper'; 
+paper.setAttribute('style', 'border: 1px solid', 'border-radius: 8px', 'background-color: #fff', 'margin: 15px', 'padding: 15px');
+container.appendChild(paper);
+
+const sci = document.createElement('button');
+sci.classList.add('sci');
+sci.textContent = 'Scissor'; 
+sci.setAttribute('style', 'border: 1px solid', 'border-radius: 8px', 'background-color: #fff', 'margin: 15px', 'padding: 15px');
+container.appendChild(sci);
+
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach((button) => 
+
+button.addEventListener('click', () =>
+{
+    game();
+}));
+
+
+
+/*getComputerChoice();
 getPlayerChoice();
 game();
 console.log("player: " + pwin + " Computer: " + cwin + " Tie: " + tie);
@@ -127,3 +155,40 @@ console.log("player: " + pwin + " Computer: " + cwin + " Tie: " + tie);
 
 
 
+
+<!-- HTML !-->
+<button class="button-13" role="button">Button 13</button>
+
+
+.button-13 {
+  background-color: #fff;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  box-sizing: border-box;
+  color: #0f1111;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Amazon Ember",sans-serif;
+  font-size: 13px;
+  line-height: 29px;
+  padding: 0 10px 0 11px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  width: 100px;
+}
+
+.button-13:hover {
+  background-color: #f7fafa;
+}
+
+.button-13:focus {
+  border-color: #008296;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  outline: 0;
+}*/
