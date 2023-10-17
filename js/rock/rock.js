@@ -13,7 +13,9 @@ function getComputerChoice()
       
 }
 
-/*function getPlayerChoice()
+/*removing console log for player to manually type their choice.
+
+function getPlayerChoice()
 {
     player = prompt("Choose rock, paper, or scissors");
     player = player.toLowerCase();
@@ -100,8 +102,7 @@ function compare()
 
 function game ()
 {
-    for (i = 0; i < 4; i++)
-    {
+   
         getComputerChoice();
        // getPlayerChoice();
         compare();
@@ -116,16 +117,41 @@ function game ()
     }
     else
     {
-        console.log("Tie!  Ties: " + tie + " Player wins: " + pwin + " computer wins: " + cwin); 
+        console.log("Tie! Player wins: " + pwin + " computer wins: " + cwin + ' Ties: ' + tie); 
     }
+
+    if(pwin === 5 || cwin === 5)
+    {
+    winner();
     }
+
+
+    
+}
+
+function winner()
+{
+    let win = 'computer';
+
+        if (pwin > cwin)
+        {
+            win = 'player';
+        }
+        console.log(win + ' has won the game! Score is: Player: ' + pwin + ' Computer: ' + cwin);
+        console.log('resetting for new game');
+        pwin = 0;
+        cwin = 0;
+        tie = 0;
+
+    
+
 }
 
 
 const rock = document.createElement('button');
 rock.classList.add('rock');
 rock.textContent = 'Rock'; 
-rock.setAttribute('style', 'border: 1px solid', 'border-radius: 8px', 'background-color: #fff', 'margin: 15px', 'padding: 15px');
+rock.setAttribute('style', 'border: 1px solid', 'border-radius: 8px', 'background-color: #fff', 'margin: 15px', 'padding: 15px', "id = rock");
 //rock.setAttribute("onClick", "alert('rock'");
 container.appendChild(rock);
 
@@ -133,13 +159,13 @@ container.appendChild(rock);
 const paper = document.createElement('button');
 paper.classList.add('paper');
 paper.textContent = 'Paper'; 
-paper.setAttribute('style', 'border: 1px solid', 'border-radius: 8px', 'background-color: #fff', 'margin: 15px', 'padding: 15px');
+paper.setAttribute('style', 'border: 1px solid', 'border-radius: 8px', 'background-color: #fff', 'margin: 15px', 'padding: 15px', "id = paper");
 container.appendChild(paper);
 
 const sci = document.createElement('button');
 sci.classList.add('sci');
 sci.textContent = 'Scissor'; 
-sci.setAttribute('style', 'border: 1px solid', 'border-radius: 8px', 'background-color: #fff', 'margin: 15px', 'padding: 15px');
+sci.setAttribute('style', 'border: 1px solid', 'border-radius: 8px', 'background-color: #fff', 'margin: 15px', 'padding: 15px', "id = sci");
 container.appendChild(sci);
 
 const buttons = document.querySelectorAll('button');
@@ -150,15 +176,16 @@ results.textContent = 'your results so far are:';
 results.setAttribute('style', 'border: 3px solid');
 container.appendChild(results);
 
-buttons.forEach((button) => 
-{
-
-button.addEventListener('click', () =>
-{ 
-    game();
-})});
-
-
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        console.log("acive");
+        player = button.textContent.toLowerCase(); // Assuming button text is 'Rock', 'Paper', or 'Scissor'
+        console.log(player);
+       //getComputerChoice();
+       //compare(player);
+        game();
+    });
+});
 
 
 
